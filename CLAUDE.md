@@ -1,6 +1,6 @@
 # CLAUDE.md — The Ramp
 
-Sim-specific context for AI assistants. General SceneryStack guidance: [OpenPhysics/.github/CLAUDE.md](https://github.com/OpenPhysics/.github/blob/main/CLAUDE.md).
+Sim-specific context for AI assistants. General SceneryStack guidance: [OpenLyceum/.github/CLAUDE.md](https://github.com/OpenLyceum/.github/blob/main/CLAUDE.md).
 
 ## Project
 
@@ -9,7 +9,7 @@ SceneryStack reimplementation of PhET's Java *The Ramp* (forces on an inclined p
 - **Introduction** (`src/intro/`) — Java `SimpleRampModule`
 - **More Features** (`src/more-features/`) — Java `RampModule` (charts, record/playback, FBD, measuring tape)
 
-Upstream Java ground truth: `../Baseline/TheRamp/java` (OpenPhysics/Baseline). Physics for educators: `doc/model.md`. Architecture: `doc/implementation-notes.md`.
+Upstream Java ground truth: `../Baseline/TheRamp/java` (OpenLyceum/Baseline). Physics for educators: `doc/model.md`. Architecture: `doc/implementation-notes.md`.
 
 ## Key files
 
@@ -46,7 +46,7 @@ Upstream Java ground truth: `../Baseline/TheRamp/java` (OpenPhysics/Baseline). P
 
 ## Accessibility
 
-Follows the shared [OpenPhysics accessibility convention](https://github.com/OpenPhysics/Baton/blob/main/ACCESSIBILITY.md).
+Follows the shared [OpenLyceum accessibility convention](https://github.com/OpenLyceum/Baton/blob/main/ACCESSIBILITY.md).
 `RampScreenView` registers `RampScreenSummaryContent` (live current-details derived from the
 model) and sets an explicit `pdomOrder` via a wrapper `Node`; the draggable block is
 keyboard-operable via a `KeyboardListener` (arrow keys). A11y strings live under the `a11y` key in

@@ -104,4 +104,4 @@ under a resting block can do work via a dedicated "ramp lift" term (matching the
 - Forces on an inclined plane and the work–energy theorem, any introductory mechanics text.
 - PhET *The Ramp* Java simulation (`simulations-java/simulations/the-ramp`): `SimpleRampModule`
   and `RampModule`.
-- OpenPhysics port verification: `scripts/physics-check.ts` (21 automated scenarios).
+- OpenLyceum port verification: `scripts/physics-check.ts` (21 automated scenarios).

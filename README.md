@@ -1,6 +1,6 @@
 # The Ramp
 
-[![CI](https://github.com/OpenPhysics/TheRamp/actions/workflows/ci.yml/badge.svg)](https://github.com/OpenPhysics/TheRamp/actions/workflows/ci.yml)
+[![CI](../../actions/workflows/ci.yml/badge.svg)](../../actions/workflows/ci.yml)
 
 A SceneryStack reimplementation of PhET's classic **The Ramp** simulation —
 forces on an inclined plane. Built with [SceneryStack](https://scenerystack.org/),
@@ -22,7 +22,7 @@ The sim has two screens, mirroring the original Java modules:
 - Default and projector color profiles
 - Progressive Web App (installable, offline-capable)
 - Automated verification via `npm run verify` (physics-check scenarios, lint, build)
-- Git hooks for Biome pre-commit checks; shared GitHub Actions CI via `OpenPhysics/Baton`
+- Git hooks for Biome pre-commit checks; shared GitHub Actions CI via `OpenLyceum/Baton`
 
 ## Quick Start
 
@@ -61,9 +61,9 @@ The sim starts at `version: "0.0.0"` in `package.json`. Bump only when cutting a
 
 ## License
 
-GNU Affero General Public License v3.0 — see OpenPhysics org license.
+GNU Affero General Public License v3.0 — see OpenLyceum org license.
 
 ## Contributing
 
-See [OpenPhysics contributing guidelines](https://github.com/OpenPhysics/.github/blob/main/CONTRIBUTING.md).
+See [OpenLyceum contributing guidelines](https://github.com/OpenLyceum/.github/blob/main/CONTRIBUTING.md).
 Report bugs via GitHub Issues; use org issue templates.
