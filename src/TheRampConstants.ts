@@ -6,6 +6,7 @@
  * here for convenience.
  */
 import { Range, Vector2 } from "scenerystack/dot";
+import TheRampNamespace from "./TheRampNamespace.js";
 
 export * from "./common/model/RampPhysicsConstants.js";
 
@@ -69,3 +70,26 @@ export const SCREEN_VIEW_MARGIN = 10;
 
 /** Corner radius shared by themed panels (px). */
 export const PANEL_CORNER_RADIUS = 5;
+
+TheRampNamespace.register("TheRampConstants", {
+  ANGLE_RANGE,
+  POSITION_RANGE,
+  APPLIED_FORCE_RANGE,
+  FRICTION_RANGE,
+  MASS_RANGE,
+  MODEL_VIEW_SCALE,
+  RAMP_BOARD_THICKNESS,
+  WORLD_VIEW_ORIGIN,
+  FORCE_ARROW_SCALE,
+  FBD_FORCE_SCALE,
+  FBD_SIZE,
+  APPLIED_FORCE_PER_PIXEL,
+  FBD_FORCE_PER_PIXEL,
+  FORCE_KEY_DRAG_DELTA_PX,
+  FORCE_KEY_SHIFT_DRAG_DELTA_PX,
+  ENERGY_BAR_SCALE,
+  PLOT_ENERGY_RANGE,
+  PLOT_FORCE_RANGE,
+  SCREEN_VIEW_MARGIN,
+  PANEL_CORNER_RADIUS,
+});
