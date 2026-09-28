@@ -1,9 +1,9 @@
 /**
  * TheRampPreferencesModel.ts
  *
- * Model for The Ramp's simulation-specific preferences (shown in
- * Preferences → Simulation). Each preference Property takes its initial value
- * from the corresponding query parameter in theRampQueryParameters.
+ * Model for the simulation-specific preferences shown in Preferences →
+ * Simulation. Each preference Property takes its initial value from the
+ * corresponding query parameter in theRampQueryParameters.
  *
  * These preferences define the defaults applied when a screen's model is
  * constructed and when Reset All is pressed.
