@@ -46,9 +46,6 @@ init({
   // Required when supportsProjectorMode: true is used in PreferencesModel (src/main.ts).
   colorProfiles: ["default", "projector"],
 
-  // Enables sound. This defaults the `supportsSound` query parameter to true, which
-  // (a) makes soundManager.enabledProperty start enabled, (b) lets the global
-  // soundManager initialize, and (c) keeps the nav-bar Audio toggle clickable.
-  // Without it the Audio button greys out and all sound clips stay muted.
+  // Unmutes tambo at startup. Pair with audioOptions.supportsSound in src/main.ts.
   supportsSound: true,
 });
