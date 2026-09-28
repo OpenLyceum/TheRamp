@@ -45,6 +45,7 @@ onReadyToLaunch(() => {
     }),
     new MoreFeaturesScreen({
       preferences: rampPreferences,
+      // The screen name Property updates automatically when the locale changes
       name: screenNames.moreFeaturesStringProperty,
       tandem: Tandem.ROOT.createTandem("moreFeaturesScreen"),
       backgroundColorProperty: TheRampColors.backgroundColorProperty,
