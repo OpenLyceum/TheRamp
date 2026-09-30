@@ -133,6 +133,10 @@ export class StringManager {
     return stringProperties.a11y;
   }
 
+  public getKeyboardHelpStrings(): typeof stringProperties.keyboardHelp {
+    return stringProperties.keyboardHelp;
+  }
+
   /**
    * Simulation-specific preference labels shown in Preferences → Simulation.
    */

@@ -172,15 +172,7 @@ export class TimePlotNode extends AccordionBox {
     chartNode.addChild(cursorLine);
 
     const readoutRows = series.map((descriptor) => {
-      const valueText = new Text("0", {
-        font: READOUT_FONT,
-        fill: TheRampColors.textColorProperty,
-      });
-
       const formattedValueProperty = new DerivedProperty([descriptor.liveProperty], (value) => toFixed(value, 0));
-      formattedValueProperty.link((text) => {
-        valueText.string = text;
-      });
 
       return new HBox({
         spacing: 4,
@@ -191,7 +183,10 @@ export class TimePlotNode extends AccordionBox {
             fill: descriptor.colorProperty,
             maxWidth: 60,
           }),
-          valueText,
+          new Text(formattedValueProperty, {
+            font: READOUT_FONT,
+            fill: TheRampColors.textColorProperty,
+          }),
         ],
       });
     });

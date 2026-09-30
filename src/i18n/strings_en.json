@@ -126,6 +126,13 @@
       "rampSurface": "Ramp surface — drag to change the ramp angle"
     }
   },
+  "keyboardHelp": {
+    "surfaceHeading": "Ramp surface",
+    "changeAngle": "Change the ramp angle",
+    "changeAngleDescription": "Tilt the ramp left or right.",
+    "changeAngleSlower": "Change the angle in smaller steps",
+    "changeAngleSlowerDescription": "Hold Shift to tilt the ramp in smaller steps."
+  },
   "preferences": {
     "title": "Simulation",
     "initialRampAngle": "Initial Ramp Angle",

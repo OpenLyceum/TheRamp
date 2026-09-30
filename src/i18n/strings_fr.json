@@ -126,6 +126,13 @@
       "rampSurface": "Surface de la rampe — faites glisser pour changer l'angle"
     }
   },
+  "keyboardHelp": {
+    "surfaceHeading": "Surface de la rampe",
+    "changeAngle": "Changer l'angle de la rampe",
+    "changeAngleDescription": "Inclinez la rampe vers la gauche ou la droite.",
+    "changeAngleSlower": "Changer l'angle par plus petits pas",
+    "changeAngleSlowerDescription": "Maintenez Maj pour incliner la rampe par plus petits pas."
+  },
   "preferences": {
     "title": "Simulation",
     "initialRampAngle": "Angle initial de la rampe",
