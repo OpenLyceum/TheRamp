@@ -55,12 +55,19 @@ export class TimeSeriesModel {
         this.isPlayingProperty.value = false;
         return;
       }
-      this.client.advancePhysics(dt);
-      this.recordTimeProperty.value += dt;
+      if (this.states.length === 0) {
+        this.states.push({ time: this.recordTimeProperty.value, state: this.client.getStateSnapshot() });
+      }
+      const recordDt = Math.min(dt, MAX_RECORDING_TIME - this.recordTimeProperty.value);
+      this.client.advancePhysics(recordDt);
+      this.recordTimeProperty.value = Math.min(this.recordTimeProperty.value + recordDt, MAX_RECORDING_TIME);
       const recordTime = this.recordTimeProperty.value;
       const snapshot = this.client.getStateSnapshot();
       this.states.push({ time: recordTime, state: snapshot });
       this.dataPointAddedEmitter.emit(recordTime, snapshot);
+      if (recordTime >= MAX_RECORDING_TIME) {
+        this.isPlayingProperty.value = false;
+      }
     } else {
       const recordTime = this.recordTimeProperty.value;
       const playbackSpeed = this.playbackSpeedProperty.value;
@@ -131,6 +138,7 @@ export class TimeSeriesModel {
       this.playbackTimeProperty.value = 0;
     }
     this.modeProperty.value = "playback";
+    this.applyPlaybackState();
     this.isPlayingProperty.value = true;
   }
 

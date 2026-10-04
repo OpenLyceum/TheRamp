@@ -190,7 +190,16 @@ export class RampModel implements TimeSeriesClient {
   }
 
   public getStateSnapshot(): RampPhysicsState {
-    return this.lastEndState;
+    return {
+      ...this.buildCurrentState(),
+      acceleration: this.accelerationProperty.value,
+      appliedParallel: this.forces.appliedParallelProperty.value,
+      gravityParallel: this.forces.gravityParallelProperty.value,
+      frictionParallel: this.forces.frictionParallelProperty.value,
+      wallParallel: this.forces.wallParallelProperty.value,
+      netParallel: this.forces.netParallelProperty.value,
+      normalPerpendicular: this.forces.normalPerpendicularProperty.value,
+    };
   }
 
   public setStateSnapshot(state: RampPhysicsState): void {
