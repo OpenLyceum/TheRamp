@@ -15,7 +15,7 @@ import {
   type RampPhysicsState,
   setupForces,
   stepPhysics,
-} from "../src/common/model/RampPhysicsEngine.js";
+} from "../src/common/model/RampPhysicsEngine.ts";
 
 let failures = 0;
 

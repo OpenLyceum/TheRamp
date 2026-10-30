@@ -16,7 +16,7 @@ import {
   INITIAL_POSITION_IN_SURFACE,
   INITIAL_RAMP_ANGLE,
   RAMP_LENGTH,
-} from "./RampPhysicsConstants.js";
+} from "./RampPhysicsConstants.ts";
 
 export type SurfaceId = "ground" | "ramp";
 
