@@ -1,12 +1,9 @@
-import type { SeriesDescriptor } from "./SeriesDescriptor.js";
-
-export type { SeriesDescriptor } from "./SeriesDescriptor.js";
-
 /**
  * RampPlotsNode.ts
  *
  * Collapsible energy, work, and parallel-forces time-series plots.
  */
+
 import type { BooleanProperty } from "scenerystack/axon";
 import { VBox } from "scenerystack/scenery";
 import { StringManager } from "../../i18n/StringManager.js";
@@ -14,6 +11,7 @@ import TheRampColors from "../../TheRampColors.js";
 import { PLOT_ENERGY_RANGE, PLOT_FORCE_RANGE } from "../../TheRampConstants.js";
 import type { RampModel } from "../model/RampModel.js";
 import { getKineticEnergy, getPotentialEnergy, getTotalEnergy, getTotalWork } from "../model/RampPhysicsEngine.js";
+import type { SeriesDescriptor } from "./SeriesDescriptor.js";
 import { TimePlotNode } from "./TimePlotNode.js";
 
 function createEnergySeries(model: RampModel): SeriesDescriptor[] {
