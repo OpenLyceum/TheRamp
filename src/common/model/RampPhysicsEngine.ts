@@ -207,7 +207,10 @@ function applyBoundaryConditions(state: RampPhysicsState): BoundaryResult {
   return { state, collided: false, velocityBeforeStop: 0 };
 }
 
-/** gravityWork/appliedWork baseline so the invariants hold at rest. Port of initWorks. */
+/**
+ * gravityWork/appliedWork baseline so the invariants hold at rest. Port of initWorks.
+ * @public
+ */
 export function initWorks(state: RampPhysicsState): RampPhysicsState {
   const pe = getPotentialEnergy(state);
   return { ...state, gravityWork: -pe, appliedWork: pe + getKineticEnergy(state) };
