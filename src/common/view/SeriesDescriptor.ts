@@ -1,6 +1,12 @@
 /**
  * SeriesDescriptor.ts
+ *
+ * One plotted series in the ramp energy/work/force charts.
  */
+
+import type { ReadOnlyProperty } from "scenerystack/axon";
+import type { ProfileColorProperty } from "scenerystack/scenery";
+import type { RampPhysicsState } from "../model/RampPhysicsEngine.js";
 
 export interface SeriesDescriptor {
   readonly labelStringProperty: ReadOnlyProperty<string>;
