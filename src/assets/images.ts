@@ -19,5 +19,3 @@ export const RampImages = {
   ollie: ollieUrl,
   skateboard: skateboardUrl,
 } as const;
-
-export type RampImageKey = keyof typeof RampImages;

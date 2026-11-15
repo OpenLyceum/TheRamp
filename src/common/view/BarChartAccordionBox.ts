@@ -19,7 +19,7 @@ import TheRampColors from "../../TheRampColors.js";
 import { ENERGY_BAR_SCALE } from "../../TheRampConstants.js";
 import { type BarChartGroup, BarChartNode } from "./BarChartNode.js";
 
-export interface LegendItem {
+interface LegendItem {
   readonly abbreviationStringProperty: ReadOnlyProperty<string>;
   readonly descriptionStringProperty: ReadOnlyProperty<string>;
   readonly colorProperty: ProfileColorProperty | string;

@@ -14,14 +14,14 @@ import type { SurfaceId } from "../model/RampPhysicsEngine.js";
 import { ForceArrowNode } from "./ForceArrowNode.js";
 
 export type ForceId = "applied" | "gravity" | "normal" | "friction" | "wall" | "total";
-export type FrameId = "entire" | "parallel" | "perpendicular" | "x" | "y";
+type FrameId = "entire" | "parallel" | "perpendicular" | "x" | "y";
 
 const FRAMES: FrameId[] = ["entire", "parallel", "perpendicular", "x", "y"];
 const FORCES: ForceId[] = ["applied", "gravity", "normal", "friction", "wall", "total"];
 
 const TOTAL_TAIL_OFFSET = 15;
 
-export function getSurfaceAngle(surface: SurfaceId, rampAngle: number): number {
+function getSurfaceAngle(surface: SurfaceId, rampAngle: number): number {
   return surface === "ramp" ? rampAngle : 0;
 }
 
@@ -44,7 +44,7 @@ export function getForceVectors(model: RampModel): Record<ForceId, Vector2> {
   };
 }
 
-export function decompose(force: Vector2, frame: FrameId, theta: number): Vector2 {
+function decompose(force: Vector2, frame: FrameId, theta: number): Vector2 {
   const cosTheta = Math.cos(theta);
   const sinTheta = Math.sin(theta);
   const uHat = new Vector2(cosTheta, sinTheta);
@@ -64,7 +64,7 @@ export function decompose(force: Vector2, frame: FrameId, theta: number): Vector
   }
 }
 
-export function toViewForce(modelForce: Vector2): Vector2 {
+function toViewForce(modelForce: Vector2): Vector2 {
   return new Vector2(modelForce.x * FORCE_ARROW_SCALE, -modelForce.y * FORCE_ARROW_SCALE);
 }
 

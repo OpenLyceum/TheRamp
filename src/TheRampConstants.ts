@@ -68,9 +68,6 @@ export const PLOT_FORCE_RANGE = new Range(-1000, 1000);
 /** Margin between screen-view edge and content, px */
 export const SCREEN_VIEW_MARGIN = 10;
 
-/** Corner radius shared by themed panels (px). */
-export const PANEL_CORNER_RADIUS = 5;
-
 TheRampNamespace.register("TheRampConstants", {
   ANGLE_RANGE,
   POSITION_RANGE,
@@ -91,5 +88,4 @@ TheRampNamespace.register("TheRampConstants", {
   PLOT_ENERGY_RANGE,
   PLOT_FORCE_RANGE,
   SCREEN_VIEW_MARGIN,
-  PANEL_CORNER_RADIUS,
 });

@@ -14,7 +14,7 @@ import { ArrowNode, PhetFont } from "scenerystack/scenery-phet";
 import TheRampColors from "../../TheRampColors.js";
 import { ENERGY_BAR_SCALE } from "../../TheRampConstants.js";
 
-export interface BarDataEntry {
+interface BarDataEntry {
   readonly colorProperty: ProfileColorProperty;
   readonly valueProperty: ReadOnlyProperty<number>;
 }
