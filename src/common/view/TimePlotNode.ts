@@ -15,7 +15,7 @@ import { AccordionBox } from "scenerystack/sun";
 import TheRampColors from "../../TheRampColors.js";
 import { MAX_RECORDING_TIME } from "../model/RampPhysicsConstants.js";
 import type { TimeSeriesModel } from "../model/TimeSeriesModel.js";
-import type { SeriesDescriptor } from "./RampPlotsNode.js";
+import type { SeriesDescriptor } from "./SeriesDescriptor.js";
 
 const DEFAULT_CHART_VIEW_WIDTH = 480;
 const CHART_VIEW_HEIGHT = 110;

@@ -17,7 +17,7 @@ import type { RampModel } from "../model/RampModel.js";
 import { CoolRampButton } from "./CoolRampButton.js";
 import { ObjectComboBox } from "./ObjectComboBox.js";
 import { ObjectSelectionPanel } from "./ObjectSelectionPanel.js";
-import type { RampScreenViewFeatures } from "./RampScreenView.js";
+import type { RampScreenViewFeatures } from "./RampScreenViewFeatures.js";
 
 const LABEL_FONT = new PhetFont(13);
 

@@ -1,3 +1,7 @@
+import type { RampScreenViewFeatures } from "./RampScreenViewFeatures.js";
+
+export type { RampScreenViewFeatures } from "./RampScreenViewFeatures.js";
+
 /**
  * RampScreenView.ts
  *
@@ -27,24 +31,6 @@ import { RampSceneNode } from "./RampSceneNode.js";
 import { RampScreenSummaryContent } from "./RampScreenSummaryContent.js";
 import { RecordPlaybackControlBar } from "./RecordPlaybackControlBar.js";
 import { ZeroPointPeLineNode } from "./ZeroPointPeLineNode.js";
-
-export interface RampScreenViewFeatures {
-  hasFreeBodyDiagram?: boolean;
-  hasObjectComboBox?: boolean;
-  hasFrictionSlider?: boolean;
-  hasMassSlider?: boolean;
-  hasMeasuringTape?: boolean;
-  hasZeroPointControl?: boolean;
-  hasVectorFrameControls?: boolean;
-  hasForceVisibilityControls?: boolean;
-  hasRecordPlaybackBar?: boolean;
-  energyBarsExpanded?: boolean;
-  workBarsExpanded?: boolean;
-  energyPlotExpanded?: boolean;
-  workPlotExpanded?: boolean;
-  forcePlotExpanded?: boolean;
-  plotViewWidth?: number;
-}
 
 export type RampScreenViewOptions = ScreenViewOptions;
 

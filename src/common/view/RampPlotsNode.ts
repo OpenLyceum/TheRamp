@@ -1,32 +1,20 @@
+import type { SeriesDescriptor } from "./SeriesDescriptor.js";
+
+export type { SeriesDescriptor } from "./SeriesDescriptor.js";
+
 /**
  * RampPlotsNode.ts
  *
  * Collapsible energy, work, and parallel-forces time-series plots.
  */
-import type { BooleanProperty, ReadOnlyProperty } from "scenerystack/axon";
-import type { ProfileColorProperty } from "scenerystack/scenery";
+import type { BooleanProperty } from "scenerystack/axon";
 import { VBox } from "scenerystack/scenery";
 import { StringManager } from "../../i18n/StringManager.js";
 import TheRampColors from "../../TheRampColors.js";
 import { PLOT_ENERGY_RANGE, PLOT_FORCE_RANGE } from "../../TheRampConstants.js";
 import type { RampModel } from "../model/RampModel.js";
-import {
-  getKineticEnergy,
-  getPotentialEnergy,
-  getTotalEnergy,
-  getTotalWork,
-  type RampPhysicsState,
-} from "../model/RampPhysicsEngine.js";
+import { getKineticEnergy, getPotentialEnergy, getTotalEnergy, getTotalWork } from "../model/RampPhysicsEngine.js";
 import { TimePlotNode } from "./TimePlotNode.js";
-
-export interface SeriesDescriptor {
-  readonly labelStringProperty: ReadOnlyProperty<string>;
-  readonly colorProperty: ProfileColorProperty;
-  /** live value for the readout column */
-  readonly liveProperty: ReadOnlyProperty<number>;
-  /** value extracted from a recorded snapshot for plotting */
-  readonly accessor: (state: RampPhysicsState) => number;
-}
 
 function createEnergySeries(model: RampModel): SeriesDescriptor[] {
   const energyStrings = StringManager.getInstance().getEnergyStrings();
