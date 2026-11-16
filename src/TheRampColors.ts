@@ -250,6 +250,14 @@ const TheRampColors = {
     default: "#99CEFF",
     projector: "#6BB0E8",
   }),
+
+  // ── Moved from views (no-inline-color) ─────────────────────────────────────
+
+  /** Play / pause glyph on the round playback button. */
+  playbackIconColorProperty: new ProfileColorProperty(TheRampNamespace, "playbackIcon", {
+    default: "#000000",
+    projector: "#000000",
+  }),
 };
 
 export default TheRampColors;
