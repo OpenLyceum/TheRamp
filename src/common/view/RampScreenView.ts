@@ -47,7 +47,7 @@ export class RampScreenView extends ScreenView {
   protected readonly forcePlotExpandedProperty: BooleanProperty;
   protected readonly measuringTapeVisibleProperty: BooleanProperty;
   protected readonly zeroPointVisibleProperty: BooleanProperty;
-  private measuringTape: MeasuringTapeNode | null = null;
+  private readonly measuringTape: MeasuringTapeNode | null = null;
 
   public constructor(model: RampModel, features: RampScreenViewFeatures = {}, providedOptions?: RampScreenViewOptions) {
     // Register the accessible screen summary (Interactive Description). Shared by
