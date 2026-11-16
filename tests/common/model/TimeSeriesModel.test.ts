@@ -1,3 +1,4 @@
+import { assert, disableAssert, enableAssert } from "scenerystack/assert";
 import { describe, expect, it } from "vitest";
 import { RampModel } from "../../../src/common/model/RampModel.js";
 import { MAX_RECORDING_TIME } from "../../../src/common/model/RampPhysicsConstants.js";
@@ -52,4 +53,21 @@ describe("TimeSeriesModel", () => {
     expect(series.recordTimeProperty.value).toBe(MAX_RECORDING_TIME);
     expect(series.isPlayingProperty.value).toBe(false);
   });
+});
+
+it("validates the retained-time event under runtime assertions", () => {
+  const { series } = createRecording();
+  series.record();
+  series.step(0.1);
+  series.setPlaybackTime(0.05);
+  const assertionsWereEnabled = !!assert;
+  enableAssert();
+  try {
+    expect(() => series.record()).not.toThrow();
+    expect(series.recordTimeProperty.value).toBe(0.05);
+  } finally {
+    if (!assertionsWereEnabled) {
+      disableAssert();
+    }
+  }
 });

@@ -36,6 +36,11 @@ export class TimeSeriesModel {
 
   public readonly clearedEmitter = new Emitter();
 
+  /** The retained end time when recording abandons a playback branch. */
+  public readonly truncatedEmitter = new Emitter<[number]>({
+    parameters: [{ valueType: "number" }],
+  });
+
   private readonly states: Array<{ time: number; state: RampPhysicsState }> = [];
 
   private readonly client: TimeSeriesClient;
@@ -127,6 +132,7 @@ export class TimeSeriesModel {
           break;
         }
       }
+      this.truncatedEmitter.emit(playbackTime);
       this.recordTimeProperty.value = playbackTime;
     }
     this.modeProperty.value = "record";

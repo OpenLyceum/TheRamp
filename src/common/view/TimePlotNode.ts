@@ -118,6 +118,17 @@ export class TimePlotNode extends AccordionBox {
       }
     });
 
+    timeSeriesModel.truncatedEmitter.addListener((time) => {
+      for (const dataSet of dataSets) {
+        while (dataSet.length > 0 && (dataSet[dataSet.length - 1]?.x ?? 0) > time) {
+          dataSet.pop();
+        }
+      }
+      for (const plot of linePlots) {
+        plot.update();
+      }
+    });
+
     timeSeriesModel.clearedEmitter.addListener(() => {
       for (const dataSet of dataSets) {
         dataSet.length = 0;
