@@ -9,6 +9,7 @@ import { Path } from "scenerystack/scenery";
 import { PlayIconShape } from "scenerystack/scenery-phet";
 import { RoundPushButton, type RoundPushButtonOptions } from "scenerystack/sun";
 import { Tandem } from "scenerystack/tandem";
+import TheRampColors from "../../TheRampColors.js";
 
 const DEFAULT_RADIUS = 16;
 
@@ -16,7 +17,7 @@ function createPlayIcon(radius: number): Path {
   const playWidth = radius * 0.8;
   const playHeight = radius;
   return new Path(new PlayIconShape(playWidth, playHeight), {
-    fill: "black",
+    fill: TheRampColors.playbackIconColorProperty,
     centerX: radius * 0.05,
   });
 }
