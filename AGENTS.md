@@ -54,6 +54,7 @@ each locale JSON, via `StringManager.getA11yStrings()`.
 
 ## Compliance carve-outs
 
+- `.github/workflows/ci.yml`: `unused-mode: advisory` until both Knip default and production baselines are reviewed and cleared ([Baton/doc/knip.md](https://github.com/OpenLyceum/Baton/blob/main/doc/knip.md)).
 - **Root constants:** `src/TheRampConstants.ts`; domain-specific `src/common/model/RampPhysicsConstants.ts` stays nested.
 - **`src/assets/`** holds bundled images/audio plus the `images.ts` manifest (extra root folder).
 - **Domain clock:** `TimeSeriesModel` owns record/playback scrubbing instead of composing fleet-standard `TimeModel`.
