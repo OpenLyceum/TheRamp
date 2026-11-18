@@ -70,12 +70,19 @@ export class RampScreenView extends ScreenView {
     this.sceneNode = new RampSceneNode(model, this.visibleBoundsProperty);
     this.addChild(this.sceneNode);
 
+    let zeroPointPeLineNode: ZeroPointPeLineNode | null = null;
     if (features.hasZeroPointControl) {
-      this.addChild(new ZeroPointPeLineNode(model, this.sceneNode.modelViewTransform, this.zeroPointVisibleProperty));
+      zeroPointPeLineNode = new ZeroPointPeLineNode(
+        model,
+        this.sceneNode.modelViewTransform,
+        this.zeroPointVisibleProperty,
+      );
+      this.addChild(zeroPointPeLineNode);
     }
 
+    let freeBodyDiagramNode: FreeBodyDiagramNode | null = null;
     if (features.hasFreeBodyDiagram) {
-      const freeBodyDiagramNode = new FreeBodyDiagramNode(model);
+      freeBodyDiagramNode = new FreeBodyDiagramNode(model);
       freeBodyDiagramNode.left = SCREEN_VIEW_MARGIN;
       freeBodyDiagramNode.top = SCREEN_VIEW_MARGIN;
       this.addChild(freeBodyDiagramNode);
@@ -198,6 +205,8 @@ export class RampScreenView extends ScreenView {
       new Node({
         pdomOrder: [
           this.sceneNode,
+          zeroPointPeLineNode,
+          freeBodyDiagramNode,
           this.controlPanel,
           this.goPauseClearPanel,
           recordPlaybackControlBar,

@@ -32,7 +32,8 @@ export class MoreFeaturesScreen extends Screen<MoreFeaturesModel, MoreFeaturesSc
       optionize<MoreFeaturesScreenOptions, EmptySelfOptions, ScreenOptions>()(
         {
           backgroundColorProperty: TheRampColors.backgroundColorProperty,
-          createKeyboardHelpNode: () => new RampKeyboardHelpContent(),
+          createKeyboardHelpNode: () =>
+            new RampKeyboardHelpContent({ hasFreeBodyDiagram: true, hasZeroPointControl: true }),
           homeScreenIcon: createMoreFeaturesIcon(),
         },
         options,

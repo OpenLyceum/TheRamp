@@ -123,7 +123,9 @@
       "zoomOut": "Zoom out",
       "energyGraphInfo": "Energy graph legend",
       "clearThermal": "Clear thermal energy",
-      "rampSurface": "Ramp surface — drag to change the ramp angle"
+      "rampSurface": "Ramp surface — drag to change the ramp angle",
+      "freeBodyDiagram": "Free-body diagram — drag left or right to push the object",
+      "timeCursor": "Time cursor"
     }
   },
   "keyboardHelp": {
@@ -131,7 +133,27 @@
     "changeAngle": "Change the ramp angle",
     "changeAngleDescription": "Tilt the ramp left or right.",
     "changeAngleSlower": "Change the angle in smaller steps",
-    "changeAngleSlowerDescription": "Hold Shift to tilt the ramp in smaller steps."
+    "changeAngleSlowerDescription": "Hold Shift to tilt the ramp in smaller steps.",
+    "objectHeading": "Object on the ramp",
+    "pushObject": "Push the object",
+    "pushObjectDescription": "Hold Left or Right arrow keys, or A or D, to push the object along the surface. Release the key to stop pushing.",
+    "pushObjectGently": "Push with less force",
+    "pushObjectGentlyDescription": "Hold Shift as well to push the object with less force.",
+    "freeBodyDiagramHeading": "Free-body diagram",
+    "pushFromDiagram": "Apply force from the diagram",
+    "pushFromDiagramDescription": "With the free-body diagram focused, hold Left or Right arrow keys, or A or D, to push the object. Release the key to stop pushing.",
+    "pushFromDiagramGently": "Apply less force",
+    "pushFromDiagramGentlyDescription": "Hold Shift as well to apply less force from the diagram.",
+    "zeroPointHeading": "Zero potential energy line",
+    "moveZeroPoint": "Move the line up or down",
+    "moveZeroPointDescription": "Hold Up or Down arrow keys, or W or S, to move the zero potential energy height.",
+    "moveZeroPointSlower": "Move more slowly",
+    "moveZeroPointSlowerDescription": "Hold Shift as well to move the line more slowly.",
+    "timeCursorHeading": "Graph time cursor",
+    "scrubTime": "Move through the recording",
+    "scrubTimeDescription": "Move the graph time cursor earlier or later with Left or Right arrow keys, or A or D.",
+    "scrubTimeSlower": "Move in smaller steps",
+    "scrubTimeSlowerDescription": "Hold Shift to move the time cursor in smaller steps."
   },
   "preferences": {
     "title": "Simulation",

@@ -123,7 +123,9 @@
       "zoomOut": "Alejar",
       "energyGraphInfo": "Leyenda del gráfico de energía",
       "clearThermal": "Borrar energía térmica",
-      "rampSurface": "Superficie de la rampa — arrastra para cambiar el ángulo"
+      "rampSurface": "Superficie de la rampa — arrastra para cambiar el ángulo",
+      "freeBodyDiagram": "Diagrama de cuerpo libre — arrastra a la izquierda o la derecha para empujar el objeto",
+      "timeCursor": "Cursor de tiempo"
     }
   },
   "keyboardHelp": {
@@ -131,7 +133,27 @@
     "changeAngle": "Cambiar el ángulo de la rampa",
     "changeAngleDescription": "Inclina la rampa hacia la izquierda o la derecha.",
     "changeAngleSlower": "Cambiar el ángulo en pasos más pequeños",
-    "changeAngleSlowerDescription": "Mantén Mayús para inclinar la rampa en pasos más pequeños."
+    "changeAngleSlowerDescription": "Mantén Mayús para inclinar la rampa en pasos más pequeños.",
+    "objectHeading": "Objeto sobre la rampa",
+    "pushObject": "Empujar el objeto",
+    "pushObjectDescription": "Mantén las flechas izquierda o derecha, o A o D, para empujar el objeto a lo largo de la superficie. Suelta la tecla para dejar de empujar.",
+    "pushObjectGently": "Empujar con menos fuerza",
+    "pushObjectGentlyDescription": "Mantén también Mayús para empujar el objeto con menos fuerza.",
+    "freeBodyDiagramHeading": "Diagrama de cuerpo libre",
+    "pushFromDiagram": "Aplicar fuerza desde el diagrama",
+    "pushFromDiagramDescription": "Con el diagrama de cuerpo libre enfocado, mantén las flechas izquierda o derecha, o A o D, para empujar el objeto. Suelta la tecla para dejar de empujar.",
+    "pushFromDiagramGently": "Aplicar menos fuerza",
+    "pushFromDiagramGentlyDescription": "Mantén también Mayús para aplicar menos fuerza desde el diagrama.",
+    "zeroPointHeading": "Línea de energía potencial cero",
+    "moveZeroPoint": "Mover la línea arriba o abajo",
+    "moveZeroPointDescription": "Mantén las flechas arriba o abajo, o W o S, para mover la altura de energía potencial cero.",
+    "moveZeroPointSlower": "Mover más despacio",
+    "moveZeroPointSlowerDescription": "Mantén también Mayús para mover la línea más despacio.",
+    "timeCursorHeading": "Cursor de tiempo de la gráfica",
+    "scrubTime": "Recorrer la grabación",
+    "scrubTimeDescription": "Mueve el cursor de tiempo de la gráfica antes o después con las flechas izquierda o derecha, o A o D.",
+    "scrubTimeSlower": "Mover en pasos más pequeños",
+    "scrubTimeSlowerDescription": "Mantén Mayús para mover el cursor de tiempo en pasos más pequeños."
   },
   "preferences": {
     "title": "Simulación",

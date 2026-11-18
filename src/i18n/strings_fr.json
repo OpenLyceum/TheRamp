@@ -123,7 +123,9 @@
       "zoomOut": "Zoom arrière",
       "energyGraphInfo": "Légende du graphique d'énergie",
       "clearThermal": "Effacer l'énergie thermique",
-      "rampSurface": "Surface de la rampe — faites glisser pour changer l'angle"
+      "rampSurface": "Surface de la rampe — faites glisser pour changer l'angle",
+      "freeBodyDiagram": "Diagramme de corps libre — faites glisser à gauche ou à droite pour pousser l'objet",
+      "timeCursor": "Curseur de temps"
     }
   },
   "keyboardHelp": {
@@ -131,7 +133,27 @@
     "changeAngle": "Changer l'angle de la rampe",
     "changeAngleDescription": "Inclinez la rampe vers la gauche ou la droite.",
     "changeAngleSlower": "Changer l'angle par plus petits pas",
-    "changeAngleSlowerDescription": "Maintenez Maj pour incliner la rampe par plus petits pas."
+    "changeAngleSlowerDescription": "Maintenez Maj pour incliner la rampe par plus petits pas.",
+    "objectHeading": "Objet sur la rampe",
+    "pushObject": "Pousser l'objet",
+    "pushObjectDescription": "Maintenez les flèches gauche ou droite, ou A ou D, pour pousser l'objet le long de la surface. Relâchez la touche pour arrêter de pousser.",
+    "pushObjectGently": "Pousser avec moins de force",
+    "pushObjectGentlyDescription": "Maintenez aussi Maj pour pousser l'objet avec moins de force.",
+    "freeBodyDiagramHeading": "Diagramme de corps libre",
+    "pushFromDiagram": "Appliquer une force depuis le diagramme",
+    "pushFromDiagramDescription": "Le diagramme de corps libre actif, maintenez les flèches gauche ou droite, ou A ou D, pour pousser l'objet. Relâchez la touche pour arrêter de pousser.",
+    "pushFromDiagramGently": "Appliquer moins de force",
+    "pushFromDiagramGentlyDescription": "Maintenez aussi Maj pour appliquer moins de force depuis le diagramme.",
+    "zeroPointHeading": "Ligne d'énergie potentielle nulle",
+    "moveZeroPoint": "Déplacer la ligne vers le haut ou le bas",
+    "moveZeroPointDescription": "Maintenez les flèches haut ou bas, ou W ou S, pour déplacer la hauteur d'énergie potentielle nulle.",
+    "moveZeroPointSlower": "Déplacer plus lentement",
+    "moveZeroPointSlowerDescription": "Maintenez aussi Maj pour déplacer la ligne plus lentement.",
+    "timeCursorHeading": "Curseur de temps du graphique",
+    "scrubTime": "Parcourir l'enregistrement",
+    "scrubTimeDescription": "Déplacez le curseur de temps du graphique plus tôt ou plus tard avec les flèches gauche ou droite, ou A ou D.",
+    "scrubTimeSlower": "Déplacer par plus petits pas",
+    "scrubTimeSlowerDescription": "Maintenez Maj pour déplacer le curseur de temps par plus petits pas."
   },
   "preferences": {
     "title": "Simulation",

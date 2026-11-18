@@ -2,10 +2,12 @@
  * FreeBodyDiagramNode.ts
  *
  * Collapsible 200×200 free-body diagram; horizontal drag applies force to the block.
+ * The background is the drag target, so it is the focusable, named PDOM element
+ * that carries the RichDragListener's left/right keyboard push.
  */
 import { Multilink } from "scenerystack/axon";
 import { clamp, Vector2 } from "scenerystack/dot";
-import { Line, Node, Rectangle, RichDragListener, Text } from "scenerystack/scenery";
+import { InteractiveHighlighting, Line, Node, Rectangle, RichDragListener, Text } from "scenerystack/scenery";
 import { PhetFont } from "scenerystack/scenery-phet";
 import { AccordionBox } from "scenerystack/sun";
 import { StringManager } from "../../i18n/StringManager.js";
@@ -24,6 +26,9 @@ import { type ForceId, getForceVectors } from "./ForceVectorSetNode.js";
 
 const FORCES: ForceId[] = ["applied", "gravity", "normal", "friction", "wall", "total"];
 
+/** Drag surface with a hover highlight, matching the other keyboard-draggable objects. */
+class DiagramBackground extends InteractiveHighlighting(Rectangle) {}
+
 function toFbdViewForce(modelForce: Vector2): Vector2 {
   return new Vector2(modelForce.x * FBD_FORCE_SCALE, -modelForce.y * FBD_FORCE_SCALE);
 }
@@ -32,16 +37,20 @@ export class FreeBodyDiagramNode extends AccordionBox {
   public constructor(model: RampModel) {
     const forceSymbols = StringManager.getInstance().getForceSymbolStrings();
     const controls = StringManager.getInstance().getControlStrings();
+    const a11yControls = StringManager.getInstance().getA11yStrings().controls;
     const visibility = model.vectorVisibility;
     const center = FBD_SIZE / 2;
     const tail = new Vector2(center, center);
 
     const diagramNode = new Node();
 
-    const background = new Rectangle(0, 0, FBD_SIZE, FBD_SIZE, {
+    const background = new DiagramBackground(0, 0, FBD_SIZE, FBD_SIZE, {
       fill: TheRampColors.chartBackgroundColorProperty,
       stroke: TheRampColors.panelBorderColorProperty,
       cursor: "ew-resize",
+      tagName: "div",
+      focusable: true,
+      accessibleName: a11yControls.freeBodyDiagramStringProperty,
     });
     diagramNode.addChild(background);
 

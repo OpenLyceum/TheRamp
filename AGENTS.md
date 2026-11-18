@@ -48,8 +48,11 @@ Upstream Java ground truth: `../Baseline/TheRamp/java` (OpenLyceum/Baseline). Ph
 
 Follows the shared [OpenLyceum accessibility convention](https://github.com/OpenLyceum/Baton/blob/main/ACCESSIBILITY.md).
 `RampScreenView` registers `RampScreenSummaryContent` (live current-details derived from the
-model) and sets an explicit `pdomOrder` via a wrapper `Node`; the draggable block is
-keyboard-operable via a `KeyboardListener` (arrow keys). A11y strings live under the `a11y` key in
+model) and sets an explicit `pdomOrder` via a wrapper `Node`. Keyboard drags are single-axis
+`RichDragListener`s (Shift = smaller step): ramp surface and block (left/right), the free-body
+diagram background (left/right push, More Features), the zero-PE line (up/down, More Features) and
+the graph time cursor (left/right). `RampKeyboardHelpContent` documents each with the matching
+`leftRight`/`upDown` key strings, plus the TimeControlNode's Alt+K. A11y strings live under the `a11y` key in
 each locale JSON, via `StringManager.getA11yStrings()`.
 
 ## Compliance carve-outs

@@ -12,6 +12,7 @@ import { HBox, Line, Node, RichDragListener, Text, VBox } from "scenerystack/sce
 import { PhetFont } from "scenerystack/scenery-phet";
 import type { AccordionBoxOptions } from "scenerystack/sun";
 import { AccordionBox } from "scenerystack/sun";
+import { StringManager } from "../../i18n/StringManager.js";
 import TheRampColors from "../../TheRampColors.js";
 import { MAX_RECORDING_TIME } from "../model/RampPhysicsConstants.js";
 import type { TimeSeriesModel } from "../model/TimeSeriesModel.js";
@@ -149,7 +150,7 @@ export class TimePlotNode extends AccordionBox {
       cursor: "ew-resize",
       tagName: "div",
       focusable: true,
-      accessibleName: "Time cursor",
+      accessibleName: StringManager.getInstance().getA11yStrings().controls.timeCursorStringProperty,
     });
 
     const updateCursorPosition = (time: number): void => {
