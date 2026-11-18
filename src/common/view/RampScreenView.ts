@@ -7,7 +7,7 @@ export type { RampScreenViewFeatures } from "./RampScreenViewFeatures.js";
  *
  * Base ScreenView for both Ramp screens: world scene, collision audio, controls, Reset All.
  */
-import { BooleanProperty, Property } from "scenerystack/axon";
+import { BooleanProperty, DerivedProperty, Property } from "scenerystack/axon";
 import { Vector2 } from "scenerystack/dot";
 import { type EmptySelfOptions, optionize } from "scenerystack/phet-core";
 import { Node } from "scenerystack/scenery";
@@ -148,15 +148,10 @@ export class RampScreenView extends ScreenView {
     }
 
     if (features.hasMeasuringTape) {
-      const measuringTapeUnitsProperty = new Property<MeasuringTapeUnits>({
-        name: StringManager.getInstance().getUnitStrings().metersStringProperty.value,
-        multiplier: 1 / MODEL_VIEW_SCALE,
-      });
-      StringManager.getInstance()
-        .getUnitStrings()
-        .metersStringProperty.link((name) => {
-          measuringTapeUnitsProperty.set({ name, multiplier: 1 / MODEL_VIEW_SCALE });
-        });
+      const measuringTapeUnitsProperty = new DerivedProperty(
+        [StringManager.getInstance().getUnitStrings().metersStringProperty],
+        (name): MeasuringTapeUnits => ({ name, multiplier: 1 / MODEL_VIEW_SCALE }),
+      );
 
       const measuringTape = new MeasuringTapeNode(measuringTapeUnitsProperty, {
         visibleProperty: this.measuringTapeVisibleProperty,
