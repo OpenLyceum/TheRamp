@@ -31,8 +31,9 @@ export function showConfirmDialog(
   const confirmButton = new TextPushButton(confirmLabelProperty, {
     font: LABEL_FONT,
     listener: () => {
-      dialog.hide();
+      // Confirm before hide: hideCallback disposeSubtree() tears down this button.
       onConfirm();
+      dialog.hide();
     },
   });
 
@@ -52,7 +53,13 @@ export function showConfirmDialog(
     stroke: TheRampColors.panelBorderColorProperty,
     closeButtonColor: TheRampColors.textColorProperty,
     title,
-    hideCallback: () => dialog.dispose(),
+    hideCallback: () => {
+      // Dialog.dispose() detaches content/title but does not dispose them; Text /
+      // TextPushButton stay linked to the long-lived string Properties otherwise.
+      dialog.dispose();
+      content.disposeSubtree();
+      title.dispose();
+    },
   });
 
   dialog.show();

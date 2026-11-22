@@ -132,6 +132,18 @@ export class BarChartNode extends Node {
       const x = i * (barWidth + barSpacing);
       const barCenterX = x + barWidth / 2;
       const barLayer = new Node();
+      // One Rectangle per entry, updated in place — avoid removeAllChildren() + new
+      // nodes on every energy/work sample (fleet disposal pattern: redraw-by-replace).
+      const bars = group.entries.map(
+        (entry) =>
+          new Rectangle(x, 0, barWidth, 0, {
+            fill: entry.colorProperty,
+            visible: false,
+          }),
+      );
+      for (const bar of bars) {
+        barLayer.addChild(bar);
+      }
       const overflowTriangle = new Path(null, {
         visible: false,
       });
@@ -178,15 +190,18 @@ export class BarChartNode extends Node {
       positionLabel();
 
       const updateGroup = (): void => {
-        barLayer.removeAllChildren();
-
         const scale = this.scaleProperty.value;
         let positiveOffset = 0;
         let negativeOffset = 0;
         let clampedTop = false;
         let clampedBottom = false;
 
-        for (const entry of group.entries) {
+        for (let entryIndex = 0; entryIndex < group.entries.length; entryIndex++) {
+          const entry = group.entries[entryIndex];
+          const bar = bars[entryIndex];
+          if (!(entry && bar)) {
+            continue;
+          }
           const value = entry.valueProperty.value;
           const {
             height,
@@ -196,19 +211,17 @@ export class BarChartNode extends Node {
           clampedTop ||= top;
           clampedBottom ||= bottom;
 
-          if (height >= 0) {
-            const bar = new Rectangle(x, -(positiveOffset + height), barWidth, height, {
-              fill: entry.colorProperty,
-            });
-            barLayer.addChild(bar);
+          if (height > 0) {
+            bar.setRect(x, -(positiveOffset + height), barWidth, height);
+            bar.visible = true;
             positiveOffset += height;
           } else if (height < 0) {
             const absH = Math.abs(height);
-            const bar = new Rectangle(x, negativeOffset, barWidth, absH, {
-              fill: entry.colorProperty,
-            });
-            barLayer.addChild(bar);
+            bar.setRect(x, negativeOffset, barWidth, absH);
+            bar.visible = true;
             negativeOffset += absH;
+          } else {
+            bar.visible = false;
           }
         }
 

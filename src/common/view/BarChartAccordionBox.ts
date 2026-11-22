@@ -157,6 +157,15 @@ export class BarChartAccordionBox extends AccordionBox {
       }),
     });
 
+    // Reused across open/close: Dialog.dispose() detaches title/content without
+    // disposing them, so a per-open `new Text(...)` title would leak listeners on
+    // the long-lived legendTitleStringProperty.
+    const legendTitle = new Text(options.legendTitleStringProperty, {
+      font: new PhetFont(28),
+      fill: TheRampColors.textColorProperty,
+      maxWidth: LEGEND_ABBREVIATION_MAX_WIDTH * 2,
+    });
+
     let legendDialog: Dialog | null = null;
 
     const infoButton = new InfoButton({
@@ -172,11 +181,7 @@ export class BarChartAccordionBox extends AccordionBox {
             closeButtonColor: TheRampColors.textColorProperty,
             ySpacing: 20,
             bottomMargin: 20,
-            title: new Text(options.legendTitleStringProperty, {
-              font: new PhetFont(28),
-              fill: TheRampColors.textColorProperty,
-              maxWidth: LEGEND_ABBREVIATION_MAX_WIDTH * 2,
-            }),
+            title: legendTitle,
             hideCallback: () => {
               legendDialog?.dispose();
               legendDialog = null;
