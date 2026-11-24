@@ -12,7 +12,7 @@
  */
 
 import { DerivedProperty } from "scenerystack/axon";
-import { toFixed } from "scenerystack/dot";
+import { roundSymmetric, toFixed } from "scenerystack/dot";
 import { StringUtils } from "scenerystack/phetcommon";
 import { ScreenSummaryContent } from "scenerystack/sim";
 import { StringManager } from "../../i18n/StringManager.js";
@@ -52,8 +52,8 @@ export class RampScreenSummaryContent extends ScreenSummaryContent {
       (template, selectedObject, rampAngle, appliedForce, speed) =>
         StringUtils.fillIn(template, {
           object: nameProperties[selectedObject.nameKey].value,
-          angle: Math.round((rampAngle * 180) / Math.PI),
-          force: Math.round(appliedForce),
+          angle: roundSymmetric((rampAngle * 180) / Math.PI),
+          force: roundSymmetric(appliedForce),
           speed: toFixed(speed, 1),
         }),
     );
